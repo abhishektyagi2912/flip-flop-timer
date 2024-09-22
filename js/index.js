@@ -93,7 +93,7 @@ let wakeLock = null;
 async function requestWakeLock() {
     try {
         wakeLock = await navigator.wakeLock.request('screen');
-        console.log('Wake Lock is active');
+        // console.log('Wake Lock is active');
     } catch (err) {
         console.error(`${err.name}, ${err.message}`);
     }
@@ -101,7 +101,7 @@ async function requestWakeLock() {
 
 // Request wake lock when the page is loaded
 window.addEventListener('load', requestWakeLock);
-s
+
 // Re-request wake lock when the visibility changes (e.g., when switching tabs)
 document.addEventListener('visibilitychange', () => {
     if (wakeLock !== null && document.visibilityState === 'visible') {
