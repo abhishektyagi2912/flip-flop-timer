@@ -86,3 +86,25 @@ function foldEffect(element) {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+let wakeLock = null;
+
+// Function to request wake lock
+async function requestWakeLock() {
+    try {
+        wakeLock = await navigator.wakeLock.request('screen');
+        console.log('Wake Lock is active');
+    } catch (err) {
+        console.error(`${err.name}, ${err.message}`);
+    }
+}
+
+// Request wake lock when the page is loaded
+window.addEventListener('load', requestWakeLock);
+s
+// Re-request wake lock when the visibility changes (e.g., when switching tabs)
+document.addEventListener('visibilitychange', () => {
+    if (wakeLock !== null && document.visibilityState === 'visible') {
+        requestWakeLock();
+    }
+});
