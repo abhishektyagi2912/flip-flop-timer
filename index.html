@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Flip Clock</title>
+    <link rel="icon" type="image/x-icon" href="./image/alphabet-f-icon.png">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="full-screen">
+        <div class="clock-container">
+            <div class="am-pm" id="amPm">AM</div>
+    
+            <div class="clock" id="flipClock">
+                <div class="flip-card large" id="hoursTens"></div>
+                <div class="flip-card large" id="hoursOnes"></div>
+                <div class="set-dot">:</div>
+                <div class="flip-card large" id="minutesTens"></div>
+                <div class="flip-card large" id="minutesOnes"></div>
+                <div class="secondClock">
+                    <div class=" small" id="secondsTens"></div>
+                    <div class=" small" id="secondsOnes"></div>
+                </div>
+            </div>
+            <div class="format-toggle">
+                <label for="formatSwitch">24-hour format</label>
+                <input type="checkbox" id="formatSwitch" />
+            </div>
+            <button id="fullScreenBtn">Full Screen</button>
+            
+        </div>
+        <div class="today-date" id="todayDate">
+            <span id="month"></span>
+            <span id="date"></span>
+            <span id="year"></span>
+            <span id="day"></span>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.full-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+.clock-container {
+    text-align: center;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.set-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.flip-card {
+    margin: 0 5px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    perspective: 1000px;
+}
+
+.flip-card.large {
+    font-size: 7rem;
+    width: 130px;
+    height: 180px;
+}
+
+.today-date {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.small {
+    margin: 0 5px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    perspective: 1000px;
+    font-size: 2rem;
+    width: 80px;
+    height: 100px;
+}
+
+.am-pm {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    display: flex;
+    justify-content: start;
+}
+
+.secondClock {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.flip-card.fold {
+    animation: foldEffect 0.6s ease-in-out;
+}
+
+@keyframes foldEffect {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(-90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+.format-toggle {
+    margin-top: 20px;
+}
+
+#fullScreenBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .flip-card.large {
+        font-size: 5rem;
+        width: 100px;
+        height: 140px;
+    }
+
+    .small {
+        font-size: 1.6rem;
+        width: 60px;
+        height: 80px;
+    }
+
+    .set-dot {
+        font-size: 3rem;
+    }
+
+    .today-date {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-card.large {
+        font-size: 4rem;
+        width: 80px;
+        height: 110px;
+    }
+
+    .small {
+        font-size: 1.4rem;
+        width: 50px;
+        height: 60px;
+    }
+
+    .set-dot {
+        font-size: 2.5rem;
+    }
+
+    .clock-container {
+        margin-bottom: 20px;
+    }
+
+    #fullScreenBtn {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card.large {
+        font-size: 3rem;
+        width: 60px;
+        height: 90px;
+    }
+
+    .small {
+        font-size: 1.2rem;
+        width: 40px;
+        height: 50px;
+    }
+
+    .set-dot {
+        font-size: 2rem;
+    }
+
+    .today-date {
+        font-size: 1rem;
+        bottom: 5px;
+        right: 5px;
+    }
+    
+    .secondClock{
+        width: 100%;
+        padding: 20px;
+    }
+
+    #fullScreenBtn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
